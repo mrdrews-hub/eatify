@@ -1,0 +1,111 @@
+.detail {
+  background-color: white;
+}
+.detail img {
+  width: 100%;
+}
+.detail .name {
+  font-weight: bold;
+}
+.detail-header {
+  margin-top: -15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: white;
+  position: relative;
+  padding: 10px;
+}
+.cityText {
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 5px 0;
+}
+.badge-wrapper {
+  display: flex;
+  justify-content: end;
+}
+.badge {
+  /* background: rgb(234,84,85); */
+  /* background: linear-gradient(286deg, rgb(234,84,85) 0%, rgb(249,160,173) 48%, rgb(246,114,128) 100%); */
+  border-radius: 10px;
+  background-color: var(--main-color);
+  min-width: 75px;
+  min-height: 30px;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+}
+.btnLove {
+  border: none;
+  border-radius: 45%;
+  color: white;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.detail-description {
+  padding: 15px;
+  text-align: justify;
+}
+.detail-menu {
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-areas: 
+  "title title"
+  "foods drinks";
+  padding: 15px;
+}
+.detail-menu .menu{
+  grid-area: title;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.foods{
+  grid-area: foods;
+  margin-bottom: 6px;
+}
+.drinks{
+  grid-area: drinks;
+  margin-left: 12px;
+  margin-bottom: 6px;
+}
+.reviewContainer {
+  padding: 15px;
+}
+.review {
+  margin-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+  padding: 10px 0;
+}
+.review p {
+  margin: 4px 0;
+  font-style: italic;
+}
+.review p:nth-child(1){
+  font-size: 12px;
+  color: rgb(32, 32, 32);
+  font-weight: bold;
+}
+.inputReview{
+  margin: 4px 0;
+}
+.btn-submit{
+  padding: 0 10px;
+  background-color: var(--main-color);
+  border: none;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+/* .loved {
+  color: var(--secondary-color);
+} */

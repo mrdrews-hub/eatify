@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+:root{
+    --primary-color: #2B2E4A;
+    --secondary-color: #E84545;
+    --main-color: #F67280;
+}
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+body {
+    background-color: #ecececec;
+}
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+a{
+    text-decoration: none;
+    min-width: 45px;
+    min-height: 45px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    min-width: 45px;
+    min-height: 45px;
+    cursor: pointer;
+}
+a:hover {
+    color: var(--main-color);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.menu-title {
+    margin: 30px;
+    text-align: center;
+}
+.btnFavorite{
+    font-size: 16px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    min-width: 44px;
+    min-height: 44px;
+}
+.btnFavorite:hover{
+    background-color: #bf1722;
+}
+input{
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 5px;
+}
+textarea{
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 5px;
+}
+::placeholder{
+    padding: 4px;
+}
+@media screen and (min-width: 992px){
+    #content{
+        width: 76%;
+        margin: auto;
+    }
+}
