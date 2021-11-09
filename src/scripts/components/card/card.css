@@ -31,7 +31,6 @@
 }
 .card img {
   min-height: 150px;
-  max-height: 250px;
   margin-bottom: 5px;
   border-radius: inherit;
   width: 100%;
@@ -79,6 +78,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin: auto;
+      width: 80%;
+  }
+  .card img{
+    height: 260px;
   }
   .card {
     margin:15px;

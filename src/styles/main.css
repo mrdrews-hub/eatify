@@ -66,19 +66,18 @@ a:hover {
 input{
     min-width: 44px;
     min-height: 44px;
-    border-radius: 5px;
+    padding: 5px;
+    /* border-radius: 5px; */
 }
 textarea{
     min-width: 44px;
     min-height: 44px;
     border-radius: 5px;
-}
-::placeholder{
-    padding: 4px;
+    padding: 5px;
 }
 @media screen and (min-width: 992px){
     #content{
-        width: 76%;
+        max-width: 991px;
         margin: auto;
     }
 }

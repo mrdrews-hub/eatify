@@ -5,13 +5,11 @@ class Home {
   static async render() {
     return `
     <hero-app></hero-app>
-      <div id="content">
         <div class="menu-title">
           <h2 tabindex="0">Daftar Restoran</h2>
         </div>
         <card-container>
         </card-container>
-      </div>
     `
   }
 

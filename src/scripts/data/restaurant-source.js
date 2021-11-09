@@ -12,6 +12,24 @@ class RestaurantSource {
     const responseJSON = await response.json()
     return responseJSON.restaurant
   }
+
+  static async searchRestaurant(keyword) {
+    const response = await fetch(API_ENDPOINT.SearchRestaurant(keyword))
+    const responseJSON = await response.json()
+    return responseJSON
+  }
+
+  static async POSTreview(data) {
+    const response = await fetch(API_ENDPOINT.reviewRestaurant, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    console.log(response)
+    return response.json()
+  }
 }
 
 export default RestaurantSource

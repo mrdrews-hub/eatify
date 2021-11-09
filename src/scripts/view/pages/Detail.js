@@ -15,6 +15,23 @@ class Detail {
     const url = UrlParser.parseActiveWithoutCombiner()
     const restaurant = await RestaurantSource.detailRestaurant(url.id)
     componentDetail.detail = restaurant
+
+    const componentreview = componentDetail.querySelector('review-form')
+    const btnSubmit = componentreview.querySelector('.btn-submit')
+    btnSubmit.addEventListener('click', async (el) => {
+      el.preventDefault()
+      const review = {
+        id: url.id,
+        name: componentreview.valueNama,
+        review: componentreview.valueReview
+      }
+      const response = await RestaurantSource.POSTreview(review)
+      componentreview.reviews = response
+      alert('Sukses!! Review Telah Terkirim')
+      componentreview.valueNama = ''
+      componentreview.valueReview = ''
+      // Onclick Submit append review ke component review
+    })
   }
 }
 

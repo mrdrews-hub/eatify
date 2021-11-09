@@ -30,7 +30,7 @@ class Card extends HTMLElement {
       </div>
 
       <div class="card-body">
-      <p class="description">${this._restaurant.description}</p>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error fugiat dolorem vero. Libero aspernatur quaerat exercitationem voluptates optio delectus expedita, labore eum earum dolorum nobis repudiandae ipsum. Nam, dolores eligendi...</p>
       </div>
 
       <div class="card-footer">

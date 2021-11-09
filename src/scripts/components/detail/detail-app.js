@@ -1,4 +1,6 @@
 import CONFIG from '../../global/config'
+import '../review/Review'
+import '../form/review-form'
 import './detail.css'
 class Detail extends HTMLElement {
   set detail(restaurant) {
@@ -43,33 +45,15 @@ class Detail extends HTMLElement {
         <hr>
       </div>
         <div class="foods">
-          <h4>Makanan</h4>
+          <h4 class="foods-title">Makanan</h4>
         </div>
         <div class="drinks">
-          <h4>Minuman</h4>
+          <h4 class="drinks-title">Minuman</h4>
         </div>
       </div>
 
-      <div class ="reviewContainer">
-        <h3>Ulasan Pelanggan</h3>
-        <div class="review">
-          <p>17 Januari 2021</p>
-          <p><span>Oleh: </span> Andre Saputra</p>
-          <p><span>Ulasan: </span> Makanannya Enak banget</p>
-        </div>
-        <div class="review">
-          <p>18 Januari 2021</p>
-          <p><span>Oleh: </span> Indri Sapitri</p>
-          <p><span>Ulasan: </span> Minumannya Enak banget</p>
-        </div>
-        <form class="form-review">
-        <h3>Tulis Reviewmu</h3>
-          <input type="text" class="inputReview" placeholder="Tulis Namamu" required>
-          <textarea cols="30" class="inputReview" rows="4" placeholder="Ulasanmu.." required></textarea>
-          <br>
-          <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim</button>
-        </form>
-      </div>
+      <review-app></review-app>
+      <review-form></review-form>
     </div>
     `
 
@@ -87,15 +71,25 @@ class Detail extends HTMLElement {
     const foodsContainer = this.querySelector('.foods')
     this._detail.menus.foods.forEach(food => {
       const foodItem = document.createElement('p')
-      foodItem.innerHTML = `<i class="fas fa-utensils"></i> ${food.name}`
+      foodItem.setAttribute('class', 'foods-item')
+      foodItem.innerHTML = `<b><i class="fas fa-utensils"></i> ${food.name}</b>`
       foodsContainer.append(foodItem)
     })
     // Drinks
     const drinksContainer = this.querySelector('.drinks')
     this._detail.menus.drinks.forEach(drink => {
       const drinkItem = document.createElement('p')
-      drinkItem.innerHTML = `<i class="fas fa-beer"></i> ${drink.name}`
+      drinkItem.setAttribute('class', 'drinks-item')
+      drinkItem.innerHTML = `<b><i class="fas fa-beer"></i> ${drink.name}</b>`
       drinksContainer.append(drinkItem)
+    })
+
+    /* Customer Reviews */
+    const reviewApp = this.querySelector('review-app')
+    this._detail.customerReviews.forEach(review => {
+      const reviewItem = document.createElement('review-item')
+      reviewItem.reviews = review
+      reviewApp.append(reviewItem)
     })
   }
 }

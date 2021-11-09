@@ -20,13 +20,14 @@
   justify-content: space-around;
   position: absolute;
   left: 0;
+  transition: all .2s;
 }
 .drawer-menu a {
   color: white;
   margin: 20px;
   text-align: center;
 }
-@media screen and (min-width: 910px) {
+@media screen and (min-width: 992px) {
   .drawer{
     display: none;
   }
