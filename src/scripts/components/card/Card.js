@@ -30,7 +30,7 @@ class Card extends HTMLElement {
       </div>
 
       <div class="card-body">
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error fugiat dolorem vero. Libero aspernatur quaerat exercitationem voluptates optio delectus expedita, labore eum earum dolorum nobis repudiandae ipsum. Nam, dolores eligendi...</p>
+      <p class="description"></p>
       </div>
 
       <div class="card-footer">
@@ -38,6 +38,12 @@ class Card extends HTMLElement {
       </div>
     </div>
     `
+
+    const description = this._restaurant.description
+    if (description.length > 30) {
+      const Summary = description.split(' ').slice(1, 31)
+      this.querySelector('.description').textContent = Summary.join(' ') + '...'
+    }
   }
 }
 customElements.define('card-app', Card)

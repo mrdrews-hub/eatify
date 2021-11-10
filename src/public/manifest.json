@@ -1,0 +1,9 @@
+{
+  "name": "EATIFY",
+  "short_name": "EATIFY",
+  "description": "Free Catalogue Restaurant for you",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d84315"
+}
