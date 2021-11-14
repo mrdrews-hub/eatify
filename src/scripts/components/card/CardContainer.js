@@ -30,9 +30,6 @@ class CardContainer extends HTMLElement {
   renderNotFound() {
     this.innerHTML = ''
     this.innerHTML += '<not-found></not-found>'
-    // this.querySelector('#showAllRestaurant').addEventListener('click', () => {
-    //   this.render()
-    // })
   }
 }
 customElements.define('card-container', CardContainer)
