@@ -1,7 +1,8 @@
 import './review.css'
 import './review-item'
 class Review extends HTMLElement {
-  connectedCallback() {
+  set reviews(review) {
+    this._reviews = review
     this.render()
   }
 
@@ -9,9 +10,15 @@ class Review extends HTMLElement {
     this.innerHTML = `
     <div class="reviewContainer">
       <h3>Ulasan Pelanggan</h3>
+        <review-item></review-item>
     </div>
     `
+    this._reviews.forEach(review => {
+      const reviewComponent = document.createElement('review-item')
+      reviewComponent.reviews = review
+      this.querySelector('.reviewContainer').appendChild(reviewComponent)
+    })
   }
 }
 
-customElements.define('review-app', Review)
+customElements.define('review-list', Review)

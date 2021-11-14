@@ -1,6 +1,5 @@
 import CONFIG from '../../global/config'
-import '../review/Review'
-import '../form/review-form'
+import '../FavoriteButton/FavoriteButton'
 import './detail.css'
 class Detail extends HTMLElement {
   set detail(restaurant) {
@@ -29,8 +28,8 @@ class Detail extends HTMLElement {
         </div>
 
         <div class="badge-wrapper"></div>
-
-        <button class="btnLove loved"><i class="fa-solid fa-heart"></i></button>
+        
+        <favorite-button></favorite-button>
 
       </div>
       
@@ -51,9 +50,6 @@ class Detail extends HTMLElement {
           <h4 class="drinks-title">Minuman</h4>
         </div>
       </div>
-
-      <review-app></review-app>
-      <review-form></review-form>
     </div>
     `
 
@@ -82,14 +78,6 @@ class Detail extends HTMLElement {
       drinkItem.setAttribute('class', 'drinks-item')
       drinkItem.innerHTML = `<b><i class="fas fa-beer"></i> ${drink.name}</b>`
       drinksContainer.append(drinkItem)
-    })
-
-    /* Customer Reviews */
-    const reviewApp = this.querySelector('review-app')
-    this._detail.customerReviews.forEach(review => {
-      const reviewItem = document.createElement('review-item')
-      reviewItem.reviews = review
-      reviewApp.append(reviewItem)
     })
   }
 }

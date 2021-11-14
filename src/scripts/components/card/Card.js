@@ -30,20 +30,10 @@ class Card extends HTMLElement {
       </div>
 
       <div class="card-body">
-      <p class="description"></p>
-      </div>
-
-      <div class="card-footer">
-        <button class="btnFavorite"><i class="fas fa-heart"></i> Tambah ke Favorite</button>
+      <p class="description">${this._restaurant.description}</p>
       </div>
     </div>
     `
-
-    const description = this._restaurant.description
-    if (description.length > 30) {
-      const Summary = description.split(' ').slice(1, 31)
-      this.querySelector('.description').textContent = Summary.join(' ') + '...'
-    }
   }
 }
 customElements.define('card-app', Card)

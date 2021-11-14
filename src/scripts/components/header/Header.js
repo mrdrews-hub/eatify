@@ -1,10 +1,6 @@
 import './Header.css'
 import '../drawer/Drawer'
 class HeaderApp extends HTMLElement {
-  // set clickEvent(event) {
-  //   this._clickEvent = event
-  //   this.render()
-  // }
   connectedCallback() {
     this.render()
   }
@@ -29,22 +25,18 @@ class HeaderApp extends HTMLElement {
                     <li>About Us</li>
                 </a>
             </ul>
+            </nav>
             <drawer-button></drawer-button>
-          </nav>
       </header>
       `
-    this.querySelector('.drawer').addEventListener('click', this._toggleDrawer)
+    this.querySelector('drawer-button').addEventListener('click', this._toggleDrawer)
   }
 
   _toggleDrawer() {
     const menu = this.querySelector('.drawer-menu')
-    if (menu.style.display === 'none') {
-      this.setAttribute('aria-pressed', true)
-      menu.style.display = 'flex'
-    } else if (menu.style.display === 'flex') {
-      this.removeAttribute('aria-pressed')
-      menu.style.display = 'none'
-    }
+    const button = this.querySelector('.drawerButton')
+    menu.classList.toggle('active')
+    button.classList.toggle('pressed')
   }
 }
 customElements.define('header-app', HeaderApp)

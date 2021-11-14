@@ -11,7 +11,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   console.log('Activating Service Workers')
-  console.log('activate ', event)
+
   event.waitUntil(CacheHelper.deleteOldCache())
 })
 

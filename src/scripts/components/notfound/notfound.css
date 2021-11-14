@@ -1,0 +1,30 @@
+.image-notFound-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image-notFound img {
+  width: 100%;
+  margin-top: -60px;
+  opacity: .6;
+}
+.NotFound-text {
+  margin-top: -10px;
+  text-align: center;
+  z-index: 1;
+}
+.NotFound-text h4 {
+  margin-bottom: -20px;
+}
+.NotFound-text button {
+  border: none;
+  color: blue;
+  text-decoration: underline;
+}
+@media screen and (min-width: 992px){
+  .image-notFound img {
+    max-width: 550px;
+    max-height: 550px;
+  }
+}

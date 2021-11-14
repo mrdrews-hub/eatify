@@ -3,7 +3,10 @@ header {
   background-color: var(--primary-color);
   position: sticky;
   top: 0;
+  right: 0;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
 }
 .logo {
   color: var(--secondary-color);
@@ -16,6 +19,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
+  width: 100%;
 }
 nav ul {
   display: none;
@@ -29,8 +33,12 @@ nav ul li:hover {
   color: var(--main-color);
 }
 @media screen and (min-width: 992px) {
+  /* nav {
+    display: flex;
+    justify-content: space-between;
+  } */
   nav ul{
     display: flex;
-    justify-content: space-around;
+    justify-self: flex-end;
   }
 }

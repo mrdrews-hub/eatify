@@ -15,7 +15,7 @@ body {
 }
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: 0;
     background-color: #bf1722;
     color: white;
@@ -41,7 +41,6 @@ button{
 }
 a:hover {
     color: var(--main-color);
-    border: 1px solid white;
     border-radius: 10px;
 }
 .menu-title {
@@ -75,8 +74,12 @@ textarea{
     border-radius: 5px;
     padding: 5px;
 }
+.imageFavorite-kosong {
+    width: 100%;
+    opacity: .6;
+}
 @media screen and (min-width: 992px){
-    #content{
+    #detail-content{
         max-width: 991px;
         margin: auto;
     }

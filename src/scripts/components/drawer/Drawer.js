@@ -7,17 +7,17 @@ class Drawer extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `            
+    this.innerHTML = `          
     <button class="drawerButton" aria-label="menu navigasi">
       <span></span>
       <span></span>
       <span></span>
     </button>
-      <div class="drawer-menu" style="display: none;">
+      <div class="drawer-menu">
         <a href="#/home">Home</a>
         <a href="#/favorite">Favorite</a>
         <a href="https://www.instagram.com/mr_drews/" rel="noopener">About Us</a>
-      </div>`
+      </div> `
   }
 }
 customElements.define('drawer-button', Drawer)

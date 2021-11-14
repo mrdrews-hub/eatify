@@ -5,21 +5,29 @@ class Home {
   static async render() {
     return `
     <hero-app></hero-app>
-        <div class="menu-title">
-          <h2 tabindex="0">Daftar Restoran</h2>
-        </div>
-        <card-container>
-        </card-container>
+    <div id="content">
+      <div class="menu-title">
+        <h2 tabindex="0">Daftar Restoran</h2>
+      </div>
+      <card-container>
+      </card-container>
+    </div>
     `
   }
 
   static async afterRender() {
-    const restaurant = await RestaurantSource.listRestaurant()
-    const cardContainer = document.querySelector('.card-list')
-    restaurant.forEach((el) => {
-      const restaurantCard = document.createElement('card-app')
-      restaurantCard.restaurantsData = el
-      cardContainer.appendChild(restaurantCard)
+    const cardContainer = document.querySelector('card-container')
+    const searhForm = document.querySelector('search-app')
+    const searchSubmit = searhForm.querySelector('#searchSubmit')
+
+    const restaurants = await RestaurantSource.listRestaurant()
+    cardContainer.ListRestaurants = restaurants
+
+    searchSubmit.addEventListener('click', async (el) => {
+      el.preventDefault()
+      const SearchResult = await RestaurantSource.searchRestaurant(searhForm.searchValue)
+      cardContainer.ListRestaurants = SearchResult
+      searhForm.searchValue = ''
     })
   }
 }

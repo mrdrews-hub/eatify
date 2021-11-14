@@ -1,4 +1,5 @@
 import './hero.css'
+import '../Search/search-app'
 class Hero extends HTMLElement {
   constructor() {
     super()
@@ -11,7 +12,7 @@ class Hero extends HTMLElement {
       <div class="content-wrapper">
           <h2 class="hero-title">Mau Makan Dimana Hari ini ?</h2>
           <p class="hero-subtitle">Cari dan Temukan Restoran <span class="highlight">Favoritmu</span> disini</p>
-          <button class="hero-button">Explore</button>
+          <search-app></search-app>
       </div>
     </div>
     `
