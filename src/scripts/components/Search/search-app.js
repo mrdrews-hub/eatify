@@ -1,10 +1,5 @@
 import './search.css'
 class SearchApp extends HTMLElement {
-  // set clickEvent(event) {
-  //   this._clickEvent = event
-  //   this.render()
-  // }
-
   connectedCallback() {
     this.render()
   }
@@ -17,7 +12,6 @@ class SearchApp extends HTMLElement {
         <button type="submit" id="searchSubmit">Cari</button>
       </form>
     </div>`
-    // this.querySelector('#searchSubmit').addEventListener('click', this._clickEvent)
   }
 
   get searchValue() {
