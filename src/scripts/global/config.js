@@ -1,6 +1,7 @@
 const CONFIG = {
   BASE_URL: 'https://restaurant-api.dicoding.dev/',
   BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/medium/',
+  OFFLINE_URL: '/offline.html',
   CACHE_NAME: new Date().toISOString(),
   DATABASE_NAME: 'EATIFY-DATABSE',
   DATABSE_VERSION: 1,

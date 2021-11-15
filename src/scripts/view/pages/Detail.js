@@ -3,22 +3,26 @@ import UrlParser from '../../routes/url-parser'
 import '../../components/detail/detail-app'
 import '../../components/review/Review'
 import '../../components/form/review-form'
+import '../../components/loader/loader'
 import favoriteButtonInitiator from '../../utils/favoriteButton-initiator'
 class Detail {
   static async render() {
     return `
     <div id="detail-content">
-      <detail-app></detail-app>
-      <review-list></review-list>
-      <review-form></review-form>
+    
     </div>
   `
   }
 
   static async afterRender() {
-    const componentDetail = document.querySelector('detail-app')
     const url = UrlParser.parseActiveWithoutCombiner()
+    const detailContent = document.querySelector('#detail-content')
+    detailContent.innerHTML = '<loading-bar></loading-bar>'
     const restaurant = await RestaurantSource.detailRestaurant(url.id)
+    detailContent.innerHTML = `<detail-app></detail-app>
+    <review-list></review-list>
+    <review-form></review-form>`
+    const componentDetail = document.querySelector('detail-app')
     const reviewList = document.querySelector('review-list')
     componentDetail.detail = restaurant
     reviewList.reviews = restaurant.customerReviews
