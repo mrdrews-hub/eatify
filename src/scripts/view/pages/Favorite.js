@@ -17,8 +17,10 @@ class Favorite {
     console.log(favoriteRestaurants.length)
     if (favoriteRestaurants.length === 0) {
       content.innerHTML = `
-        <h2>Restoran Favoritmu Masih Kosong</h2>
+      <div class="favorite-null">
+        <h2 class="menu-title">Restoran Favoritmu Masih Kosong</h2>
         <img src="/images/31.png" alt="" class="imageFavorite-kosong">
+      </div>
       `
     } else {
       const cardContainer = document.querySelector('card-container')
