@@ -6,9 +6,11 @@ class Loader extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <div class="half-circle-spinner">
-      <div class="circle circle-1"></div>
-      <div class="circle circle-2"></div>
+    <div class="loading-wrapper">
+      <div class="half-circle-spinner">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+      </div>
     </div>
     `
   }

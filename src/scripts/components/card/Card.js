@@ -13,7 +13,7 @@ class Card extends HTMLElement {
       <h3><a href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
       </div>
 
-      <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="gambar restoran"/>
+      <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}"/>
 
       <div class="card-title">
 
@@ -29,7 +29,7 @@ class Card extends HTMLElement {
         
       </div>
 
-      <div class="card-body">
+      <div class="card-body" aria-label="deskripsi restoran">
       <p class="description">${this._restaurant.description}</p>
       </div>
     </div>

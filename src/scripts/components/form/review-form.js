@@ -7,10 +7,10 @@ class FormReviews extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="form-review">
-      <h3>Tulis Reviewmu</h3>
+      <h3 tabindex="0">Tulis Reviewmu</h3>
       <form>
         <input type="text" class="input-review" id="inputNama" placeholder="Tulis Namamu" required>
-        <textarea cols="30" class="input-review" id="inputReview"rows="4" placeholder="Ulasanmu.. ex:Makanannya Enak!" required></textarea>
+        <textarea cols="30" class="input-review" id="inputReview"rows="4" placeholder="Ulasanmu.. ex:Makanannya Enak!" required aria-label="tulis ulasanmu"></textarea>
         <br>
         <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim</button>
       </form>

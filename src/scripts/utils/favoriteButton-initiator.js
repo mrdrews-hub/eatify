@@ -35,7 +35,7 @@ const favoriteButtonInitiator = {
   },
 
   renderLiked() {
-    this._likeButton.attribute = 'loved'
+    this._likeButton.attribute = 'Liked'
     const likeButton = document.querySelector('.btnLove')
     likeButton.addEventListener('click', async () => {
       likeButton.classList.add('loved')

@@ -9,8 +9,7 @@ class Review extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="reviewContainer">
-      <h3>Ulasan Pelanggan</h3>
-        <review-item></review-item>
+      <h3 tabindex="0">Ulasan Pelanggan</h3>
     </div>
     `
     this._reviews.forEach(review => {

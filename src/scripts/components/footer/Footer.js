@@ -6,7 +6,7 @@ class FooterApp extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <footer>
+    <footer tabindex="0">
       &copy; Copyright <span class="logo"> EATIFY </span><br>
       By Andre Saputra
     </footer>

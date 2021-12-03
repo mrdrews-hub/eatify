@@ -11,7 +11,7 @@ class FavoriteButton extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <button class="btnLove"><i class="fa-solid fa-heart"></i></button>
+    <button class="btnLove" tabindex="0" aria-label="tambahkan favorit"><i class="fa-solid fa-heart"></i></button>
     `
     this.querySelector('.btnLove').classList.add(this._attribute)
   }

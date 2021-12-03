@@ -15,6 +15,8 @@ class Detail {
   }
 
   static async afterRender() {
+    document.body.scrollTop = 0
+    const skipToContent = document.querySelector('.skip-link')
     const url = UrlParser.parseActiveWithoutCombiner()
     const detailContent = document.querySelector('#detail-content')
     detailContent.innerHTML = '<loading-bar></loading-bar>'
@@ -41,7 +43,6 @@ class Detail {
       reviewList.reviews = response.customerReviews
       componentreview.valueNama = ''
       componentreview.valueReview = ''
-      // Onclick Submit append review ke component review
     })
 
     // FAVORITE BTN
@@ -55,6 +56,12 @@ class Detail {
         city: restaurant.city,
         rating: restaurant.rating
       }
+    })
+
+    skipToContent.addEventListener('click', (el) => {
+      document.querySelector('#detail').focus()
+      document.querySelector('#detail').scrollIntoView()
+      console.log(el)
     })
   }
 }

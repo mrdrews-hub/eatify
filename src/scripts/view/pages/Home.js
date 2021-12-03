@@ -1,18 +1,18 @@
 import RestaurantSource from '../../data/restaurant-source'
 import '../../components/card/CardContainer'
 import '../../components/card/Card'
+import '../../components/loader/loader'
 class Home {
   static async render() {
     return `
     <hero-app></hero-app>
-    <div id="content">
-
+    <div id="mainContent">
     </div>
     `
   }
 
   static async afterRender() {
-    const content = document.querySelector('#content')
+    const content = document.querySelector('#mainContent')
     content.innerHTML = '<loading-bar></loading-bar>'
     const restaurants = await RestaurantSource.listRestaurant()
     content.innerHTML = `
@@ -28,9 +28,18 @@ class Home {
 
     searchSubmit.addEventListener('click', async (el) => {
       el.preventDefault()
-      const SearchResult = await RestaurantSource.searchRestaurant(searhForm.searchValue)
-      cardContainer.ListRestaurants = SearchResult
+      if (searhForm.searchValue === '') {
+        cardContainer.ListRestaurants = restaurants
+      } else {
+        const SearchResult = await RestaurantSource.searchRestaurant(searhForm.searchValue)
+        cardContainer.ListRestaurants = SearchResult
+      }
       searhForm.searchValue = ''
+    })
+
+    const skipLink = document.querySelector('.skip-link')
+    skipLink.addEventListener('click', (el) => {
+      document.getElementById('searchInput').focus()
     })
   }
 }
