@@ -1,10 +1,12 @@
 import RestaurantSource from '../../data/restaurant-source'
 import UrlParser from '../../routes/url-parser'
+import favoriteButtonPresenter from '../../utils/favoriteButton-presenter'
+import favoriteRestaurantIdb from '../../data/favoriteResaturant-idb'
+
 import '../../components/detail/detail-app'
 import '../../components/review/Review'
 import '../../components/form/review-form'
 import '../../components/loader/loader'
-import favoriteButtonInitiator from '../../utils/favoriteButton-initiator'
 class Detail {
   static async render() {
     return `
@@ -46,8 +48,9 @@ class Detail {
     })
 
     // FAVORITE BTN
-    favoriteButtonInitiator.init({
+    favoriteButtonPresenter.init({
       likeButton: document.querySelector('favorite-button'),
+      favoriteRestaurant: favoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

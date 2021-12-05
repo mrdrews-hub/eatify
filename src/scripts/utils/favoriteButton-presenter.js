@@ -1,11 +1,11 @@
-import '../components/FavoriteButton/FavoriteButton'
-import favoriteRestaurantIdb from '../data/favoriteResaturant-idb'
+// import '../components/FavoriteButton/FavoriteButton'
+// import favoriteRestaurantIdb from '../data/favoriteResaturant-idb'
 
-const favoriteButtonInitiator = {
-  async init({ likeButton, restaurant }) {
+const favoriteButtonPresenter = {
+  async init({ likeButton, favoriteRestaurant, restaurant }) {
     this._likeButton = likeButton
     this._restaurant = restaurant
-
+    this._favoriteRestaurant = favoriteRestaurant
     await this._renderButton()
   },
 
@@ -20,30 +20,32 @@ const favoriteButtonInitiator = {
   },
 
   async _isRestaurantExist(id) {
-    const restaurant = await favoriteRestaurantIdb.getRestaurant(id)
+    const restaurant = await this._favoriteRestaurant.getRestaurant(id)
     return !!restaurant
   },
 
   renderLike() {
     this._likeButton.attribute = 'notLike'
+    this._likeButton.label = 'Tambah favorit'
     const likeButton = document.querySelector('.btnLove')
     likeButton.addEventListener('click', async () => {
       likeButton.classList.remove('loved')
-      await favoriteRestaurantIdb.putRestaurant(this._restaurant)
+      await this._favoriteRestaurant.putRestaurant(this._restaurant)
       this._renderButton()
     })
   },
 
   renderLiked() {
     this._likeButton.attribute = 'Liked'
+    this._likeButton.label = 'Batal tambah favorit'
     const likeButton = document.querySelector('.btnLove')
     likeButton.addEventListener('click', async () => {
       likeButton.classList.add('loved')
-      await favoriteRestaurantIdb.deleteRestaurant(this._restaurant.id)
+      await this._favoriteRestaurant.deleteRestaurant(this._restaurant.id)
       this._renderButton()
     })
   }
 
 }
 
-export default favoriteButtonInitiator
+export default favoriteButtonPresenter

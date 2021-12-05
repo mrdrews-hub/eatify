@@ -29,8 +29,23 @@ module.exports = function (config) {
       // (you don't need to specify the entry option)
       // webpack watches dependencies
       // webpack configuration
-      devtool: 'inline-source-map',
-      mode: 'development'
+      devtool: 'source-map',
+      mode: 'development',
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [
+              {
+                loader: 'style-loader'
+              },
+              {
+                loader: 'css-loader'
+              }
+            ]
+          }
+        ]
+      }
     },
 
     webpackMiddleware: {
