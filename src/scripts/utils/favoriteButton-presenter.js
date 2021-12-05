@@ -1,6 +1,3 @@
-// import '../components/FavoriteButton/FavoriteButton'
-// import favoriteRestaurantIdb from '../data/favoriteResaturant-idb'
-
 const favoriteButtonPresenter = {
   async init({ likeButton, favoriteRestaurant, restaurant }) {
     this._likeButton = likeButton
@@ -25,7 +22,7 @@ const favoriteButtonPresenter = {
   },
 
   renderLike() {
-    this._likeButton.attribute = 'notLike'
+    this._likeButton.attribute = 'notLiked'
     this._likeButton.label = 'Tambah favorit'
     const likeButton = document.querySelector('.btnLove')
     likeButton.addEventListener('click', async () => {

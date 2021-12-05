@@ -1,4 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source'
+import searchRestaurantPresenter from '../../utils/searchRestaurantPresenter'
 import '../../components/card/CardContainer'
 import '../../components/card/Card'
 import '../../components/loader/loader'
@@ -16,25 +17,27 @@ class Home {
     content.innerHTML = '<loading-bar></loading-bar>'
     const restaurants = await RestaurantSource.listRestaurant()
     content.innerHTML = `
-    <div class="menu-title">
-      <h2 tabindex="0">Daftar Restoran</h2>
-    </div>
+    <h2 class="menu-title">Daftar Restoran</h2>
     <card-container>
     </card-container>`
     const cardContainer = document.querySelector('card-container')
-    const searhForm = document.querySelector('search-app')
-    const searchSubmit = searhForm.querySelector('#searchSubmit')
+    const searchForm = document.querySelector('search-app')
+    // const searchSubmit = searchForm.querySelector('#searchSubmit')
+    cardContainer.Description = 'Menampilkan Seluruh Restoran'
     cardContainer.ListRestaurants = restaurants
 
-    searchSubmit.addEventListener('click', async (el) => {
+    searchForm.submitButton.addEventListener('click', async (el) => {
       el.preventDefault()
-      if (searhForm.searchValue === '') {
+      if (searchForm.searchValue === '') {
+        cardContainer.Description = 'Menampilkan Seluruh Restoran'
         cardContainer.ListRestaurants = restaurants
       } else {
-        const SearchResult = await RestaurantSource.searchRestaurant(searhForm.searchValue)
+        const SearchResult = await RestaurantSource.searchRestaurant(searchForm.searchValue)
+        console.log(SearchResult.length);
+        cardContainer.Description = `Menampilkan ${SearchResult.length} Restoran dengan kata kunci "${searchForm.searchValue}"`
         cardContainer.ListRestaurants = SearchResult
       }
-      searhForm.searchValue = ''
+      searchForm.searchValue = ''
     })
 
     const skipLink = document.querySelector('.skip-link')

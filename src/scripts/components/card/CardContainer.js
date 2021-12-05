@@ -4,19 +4,18 @@ import '../notfound/notfound'
 class CardContainer extends HTMLElement {
   set ListRestaurants(restaurants) {
     this._restaurants = restaurants
-    this.checkContent()
+    this.render()
   }
 
-  checkContent() {
-    if (this._restaurants.length === 0) {
-      this.renderNotFound()
-    } else {
-      this.render()
-    }
+  set Description(text) {
+    this._description = text
   }
 
   render() {
     this.innerHTML = `
+    <div class="container-description">
+    ${this._description}
+    </div>
     <div class="card-list">
     </div>
     `
@@ -25,11 +24,6 @@ class CardContainer extends HTMLElement {
       restaurantCard.restaurantsData = restaurant
       this.querySelector('.card-list').appendChild(restaurantCard)
     })
-  }
-
-  renderNotFound() {
-    this.innerHTML = ''
-    this.innerHTML += '<not-found></not-found>'
   }
 }
 customElements.define('card-container', CardContainer)
