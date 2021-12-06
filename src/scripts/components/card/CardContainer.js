@@ -1,6 +1,5 @@
 import './card.css'
 import './Card'
-import '../notfound/notfound'
 class CardContainer extends HTMLElement {
   set ListRestaurants(restaurants) {
     this._restaurants = restaurants
@@ -14,7 +13,7 @@ class CardContainer extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="container-description">
-    ${this._description}
+      ${this._description}
     </div>
     <div class="card-list">
     </div>

@@ -8,7 +8,8 @@ class NotFound extends HTMLElement {
     this.innerHTML =
     `<div class="image-notFound-container">
       <div class="NotFound-text">
-        <h3 tabindex="0">Oops...Konten Tidak Ditemukan</h3><br>
+        <h3 tabindex="0">Hmm... Sepertinya ada yang salah</h3><br>
+        <a href="#/home" class="direct-home">Kembali ke halama utama</a>
       </div>
       <div class="image-notFound">
         <img src="/images/13.png" alt="">

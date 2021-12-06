@@ -23,6 +23,7 @@ class Favorite {
       `
     } else {
       const cardContainer = document.querySelector('card-container')
+      cardContainer.Description = `Menampilkan ${favoriteRestaurants.length} Restoran Favorit Kamu`
       cardContainer.ListRestaurants = favoriteRestaurants
     }
 

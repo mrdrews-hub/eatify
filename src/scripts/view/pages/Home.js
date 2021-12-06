@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source'
-import searchRestaurantPresenter from '../../utils/searchRestaurantPresenter'
+// import searchRestaurantPresenter from '../../utils/searchRestaurantPresenter'
 import '../../components/card/CardContainer'
 import '../../components/card/Card'
 import '../../components/loader/loader'
@@ -22,7 +22,6 @@ class Home {
     </card-container>`
     const cardContainer = document.querySelector('card-container')
     const searchForm = document.querySelector('search-app')
-    // const searchSubmit = searchForm.querySelector('#searchSubmit')
     cardContainer.Description = 'Menampilkan Seluruh Restoran'
     cardContainer.ListRestaurants = restaurants
 
@@ -33,7 +32,6 @@ class Home {
         cardContainer.ListRestaurants = restaurants
       } else {
         const SearchResult = await RestaurantSource.searchRestaurant(searchForm.searchValue)
-        console.log(SearchResult.length);
         cardContainer.Description = `Menampilkan ${SearchResult.length} Restoran dengan kata kunci "${searchForm.searchValue}"`
         cardContainer.ListRestaurants = SearchResult
       }

@@ -16,6 +16,11 @@
   z-index: 1;
   opacity: .7;
 }
+.direct-home{
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
 @media screen and (min-width: 992px){
   .image-notFound img {
     max-width: 550px;
