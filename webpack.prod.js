@@ -3,8 +3,8 @@ const common = require('./webpack.common')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozJpeg = require('imagemin-mozjpeg')
 const BundleAnlyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
+const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -22,22 +22,16 @@ module.exports = merge(common, {
           },
         ],
       },
-      // {
-      //   test: /\.css$/,
-      //   use: [miniCssExtractPlugin.loader,"css-loader"]
-      // }
+      {
+        test: /.s?css$/,
+        use: [miniCssExtractPlugin.loader,"css-loader"]
+      }
     ],
   },
   optimization: {
-    // minimizer: [
-    //   new cssMinimizerPlugin({
-    //     minify: [
-    //       cssMinimizerPlugin.cssnanoMinify,
-    //       cssMinimizerPlugin.cssoMinify,
-    //       cssMinimizerPlugin.cleanCssMinify,
-    //     ]
-    //   })
-    // ],
+    minimizer: [
+      new cssMinimizerPlugin()
+    ],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
@@ -62,14 +56,14 @@ module.exports = merge(common, {
   },
   plugins: [
     new BundleAnlyzerPlugin(),
-    // new miniCssExtractPlugin(),
+    new miniCssExtractPlugin(),
     new ImageminWebpackPlugin({
       pngquant: {
-        quality: 50
+        quality: 40
       },
       plugins: [
         ImageminMozJpeg({
-          quality: 50,
+          quality: 45,
           progressive: true
         })
       ]
