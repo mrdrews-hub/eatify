@@ -55,7 +55,6 @@ module.exports = merge(common, {
     }
   },
   plugins: [
-    new BundleAnlyzerPlugin(),
     new miniCssExtractPlugin(),
     new ImageminWebpackPlugin({
       pngquant: {
@@ -67,6 +66,9 @@ module.exports = merge(common, {
           progressive: true
         })
       ]
+    }),
+    new BundleAnlyzerPlugin({
+      analyzerMode: "static"
     })
   ]
 })
