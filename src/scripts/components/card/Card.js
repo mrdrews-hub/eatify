@@ -1,5 +1,6 @@
 import CONFIG from '../../global/config'
-
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 class Card extends HTMLElement {
   set restaurantsData(restaurant) {
     this._restaurant = restaurant
@@ -13,7 +14,7 @@ class Card extends HTMLElement {
       <h3><a href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
       </div>
 
-      <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}"/>
+      <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="lazyload"/>
 
       <div class="card-title">
 
