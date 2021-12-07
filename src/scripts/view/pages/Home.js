@@ -1,7 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source'
-// import searchRestaurantPresenter from '../../utils/searchRestaurantPresenter'
 import '../../components/card/CardContainer'
-import '../../components/card/Card'
 import '../../components/loader/loader'
 class Home {
   static async render() {
@@ -24,7 +22,6 @@ class Home {
     const searchForm = document.querySelector('search-app')
     cardContainer.Description = 'Menampilkan Seluruh Restoran'
     cardContainer.ListRestaurants = restaurants
-
     searchForm.submitButton.addEventListener('click', async (el) => {
       el.preventDefault()
       if (searchForm.searchValue === '') {
