@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+const ImageminMozJpeg = require('imagemin-mozjpeg')
 const path = require('path')
 
 module.exports = {
@@ -39,6 +41,17 @@ module.exports = {
     }),
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js')
+    }),
+    new ImageminWebpackPlugin({
+      pngquant: {
+        quality: 50
+      },
+      plugins: [
+        ImageminMozJpeg({
+          quality: 50,
+          progressive: true
+        })
+      ]
     })
   ]
 }
