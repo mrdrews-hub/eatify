@@ -1,8 +1,5 @@
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
-const ImageminMozJpeg = require('imagemin-mozjpeg')
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 const BundleAnlyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
 const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
@@ -57,27 +54,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new miniCssExtractPlugin(),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozJpeg({
-          quality: 45,
-          progressive: true
-        })
-      ]
-    }),
     new BundleAnlyzerPlugin({
       analyzerMode: "static"
     }), 
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 45
-          }
-        }
-      ],
-      overrideExtension: true
-    }),
   ]
 })
