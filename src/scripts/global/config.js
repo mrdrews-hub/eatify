@@ -4,7 +4,6 @@ const CONFIG = {
   CACHE_NAME: 'Eatify@V.0.0.1',
   DATABASE_NAME: 'EATIFY-DATABSE',
   DATABSE_VERSION: 1,
-  OBJECT_STORE_NAME: 'Resaturant',
-  WEBSOCKET_SERVER: 'wss://movies-feed.dicoding.dev'
+  OBJECT_STORE_NAME: 'Restaurant',
 }
 export default CONFIG

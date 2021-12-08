@@ -7,13 +7,21 @@ class Hero extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
-    <div class="hero-img">
-      <div class="content-wrapper">
+    this.innerHTML = /*html*/`
+    <div class="hero-container">
+    
+    <picture>
+      <source media="(max-width: 600px)" srcset="/images/heros/hero-image-small.jpg">
+      <source srcset="/images/heros/hero-image.webp" type="image/webp">
+      <source srcset="/images/heros/hero-image-large.jpg">
+      <img src="images/heros/hero-image.jpg" alt="Hero" class="hero-image">
+    </picture>
+      <div class="hero-content">
           <h2 class="hero-title">Mau Makan Dimana Hari ini ?</h2>
-          <p class="hero-subtitle">Cari dan Temukan Restoran <span class="highlight">Favoritmu</span> disini</p>
+          <p class="hero-subtitle">Cari dan Temukan Restoran Favoritmu disini</p>
           <search-app></search-app>
       </div>
+
     </div>
     `
   }

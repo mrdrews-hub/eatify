@@ -14,7 +14,7 @@ class Card extends HTMLElement {
       <h3><a href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
       </div>
 
-      <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="lazyload"/>
+      <img loading="lazy" src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="lazyload"/>
 
       <div class="card-title">
 
