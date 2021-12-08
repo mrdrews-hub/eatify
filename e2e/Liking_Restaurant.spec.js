@@ -1,4 +1,4 @@
-Feature('Liking Restaurant');
+Feature('Liking Restaurant')
 
 Before(({ I }) => {
   I.amOnPage('/#/favorite')
@@ -28,4 +28,4 @@ Scenario('Liking one restaurant', async ({ I }) => {
   const likedRestaurantTitle = await I.grabTextFrom('.restoName')
 
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle)
-});
+})

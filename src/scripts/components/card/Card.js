@@ -8,13 +8,13 @@ class Card extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/`
+    this.innerHTML = /* html */`
     <div class="card" tabindex=0>
       <div class="restoName">
       <h3><a href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
       </div>
 
-      <img loading="lazy" src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="lazyload"/>
+      <img loading="lazy" data-src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="lazyload"/>
 
       <div class="card-title">
 

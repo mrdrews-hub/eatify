@@ -1,6 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source'
 import '../../components/card/CardContainer'
-import '../../components/loader/loader'
 class Home {
   static async render() {
     return `
@@ -24,19 +23,15 @@ class Home {
     cardContainer.ListRestaurants = restaurants
     searchForm.submitButton.addEventListener('click', async (el) => {
       el.preventDefault()
-      if(!window.navigator.onLine){
-        alert('Tidak dapat menulis review ketika offline')
+      if (searchForm.searchValue === '') {
+        cardContainer.Description = 'Menampilkan Seluruh Restoran'
+        cardContainer.ListRestaurants = restaurants
       } else {
-        if (searchForm.searchValue === '') {
-          cardContainer.Description = 'Menampilkan Seluruh Restoran'
-          cardContainer.ListRestaurants = restaurants
-        } else {
-          const SearchResult = await RestaurantSource.searchRestaurant(searchForm.searchValue)
-          cardContainer.Description = `Menampilkan ${SearchResult.length} Restoran dengan kata kunci "${searchForm.searchValue}"`
-          cardContainer.ListRestaurants = SearchResult
-        }
-        searchForm.searchValue = ''
+        const SearchResult = await RestaurantSource.searchRestaurant(searchForm.searchValue)
+        cardContainer.Description = `Menampilkan ${SearchResult.length} Restoran dengan kata kunci "${searchForm.searchValue}"`
+        cardContainer.ListRestaurants = SearchResult
       }
+      searchForm.loading = ''
     })
 
     const skipLink = document.querySelector('.skip-link')

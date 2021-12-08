@@ -37,7 +37,7 @@ describe('Unliking a Restaurant', () => {
 
     expect(await favoriteRestaurantIdb.getAllRestaurant()).toEqual([])
   })
-  
+
   it('should not throw error if the unliked restaurant is not in the list', async () => {
     await TestFactories.createFavoriteButtonPresenterRestaurant({ id: 1 })
     await favoriteRestaurantIdb.deleteRestaurant(1)

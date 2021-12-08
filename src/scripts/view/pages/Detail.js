@@ -6,7 +6,6 @@ import favoriteRestaurantIdb from '../../data/favoriteResaturant-idb'
 import '../../components/detail/detail-app'
 import '../../components/review/Review'
 import '../../components/form/review-form'
-import '../../components/loader/loader'
 class Detail {
   static async render() {
     return `

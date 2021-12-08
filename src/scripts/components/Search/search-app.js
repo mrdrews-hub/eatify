@@ -5,11 +5,11 @@ class SearchApp extends HTMLElement {
   }
 
   render() {
-    this.innerHTML =/*html*/
+    this.innerHTML = /* html */
     `<div class="searchContainer">
       <form class="search-restaurant-form">
         <input type="search" id="searchInput" placeholder="Cari Restoran">
-        <button type="submit" id="searchSubmit">Cari</button>
+        <button type="submit" id="searchSubmit">Search</button>
       </form>
     </div>`
   }

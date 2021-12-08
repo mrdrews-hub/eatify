@@ -22,7 +22,7 @@ describe('Liking Restaurant', () => {
     await TestFactories.createFavoriteButtonPresenterRestaurant({ id: 1 })
 
     expect(document.querySelector('[aria-label="Batal tambah favorit"]'))
-    .toBeFalsy()
+      .toBeFalsy()
   })
 
   it('should be able to like the restaurant', async () => {

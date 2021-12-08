@@ -19,7 +19,7 @@ class FavoriteButton extends HTMLElement {
     <button class="btnLove" tabindex="0"><i class="fa-solid fa-heart"></i></button>
     `
     this.querySelector('.btnLove').classList.add(this._attribute)
-    this.querySelector('.btnLove').setAttribute('aria-label',this._label)
+    this.querySelector('.btnLove').setAttribute('aria-label', this._label)
   }
 }
 

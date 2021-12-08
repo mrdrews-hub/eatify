@@ -2,8 +2,10 @@
   box-sizing: border-box;
 }
 .loading-wrapper{
-  width: 350px;
-  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .half-circle-spinner {
   width: 60px;
@@ -11,6 +13,11 @@
   border-radius: 100%;
   position: relative;
   margin: 250px auto;
+}
+
+.loading-teks {
+  text-align: center;
+  color: #ff1d5e;
 }
 
 .half-circle-spinner .circle {

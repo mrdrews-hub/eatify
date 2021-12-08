@@ -1,8 +1,8 @@
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 const BundleAnlyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const miniCssExtractPlugin = require('mini-css-extract-plugin')
-const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -15,20 +15,20 @@ module.exports = merge(common, {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
-        ],
+              presets: ['@babel/preset-env']
+            }
+          }
+        ]
       },
       {
         test: /.s?css$/,
-        use: [miniCssExtractPlugin.loader,"css-loader"]
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
-    ],
+    ]
   },
   optimization: {
     minimizer: [
-      new cssMinimizerPlugin()
+      new CssMinimizerPlugin()
     ],
     splitChunks: {
       chunks: 'all',
@@ -53,9 +53,9 @@ module.exports = merge(common, {
     }
   },
   plugins: [
-    new miniCssExtractPlugin(),
+    new MiniCssExtractPlugin(),
     new BundleAnlyzerPlugin({
-      analyzerMode: "static"
-    }), 
+      analyzerMode: 'static'
+    })
   ]
 })

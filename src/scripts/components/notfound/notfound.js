@@ -5,7 +5,7 @@ class NotFound extends HTMLElement {
   }
 
   render() {
-    this.innerHTML =/*html*/
+    this.innerHTML = /* html */
     `<div class="image-notFound-container">
       <div class="NotFound-text">
         <h3 tabindex="0">Hmm... Sepertinya ada yang salah</h3><br>

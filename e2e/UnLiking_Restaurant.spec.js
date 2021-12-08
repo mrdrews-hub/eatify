@@ -4,7 +4,6 @@ Feature('UnLiking Restaurants')
 
 let firstRestaurantTitle
 Before(async ({ I }) => {
-
   I.amOnPage('/')
 
   I.seeElement('.restoName a')
@@ -23,8 +22,8 @@ Scenario('Showing favorited restaurant', async ({ I }) => {
   I.seeElement('card-app')
   const likedRestaurantTitle = await I.grabTextFrom('.restoName')
 
-  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
-});
+  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle)
+})
 
 Scenario('Unfavoriting a resto', ({ I }) => {
   I.seeElement('.restoName')

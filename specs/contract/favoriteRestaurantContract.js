@@ -8,7 +8,7 @@ const itsActAsFavoriteRestaurantModel = (favoriteRestaurant) => {
     expect(await favoriteRestaurant.getRestaurant(2))
       .toEqual({ id: 2 })
     expect(await favoriteRestaurant.getRestaurant(3))
-      .toEqual( undefined )    
+      .toEqual(undefined)
   })
 
   it('should refuse a restaurant from being added if it does not have correct property', async () => {

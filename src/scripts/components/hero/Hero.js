@@ -7,14 +7,14 @@ class Hero extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/`
+    this.innerHTML = /* html */`
     <div class="hero-container">
     
     <picture>
       <source media="(max-width: 600px)" srcset="/images/heros/hero-image-small.jpg">
       <source srcset="/images/heros/hero-image.webp" type="image/webp">
       <source srcset="/images/heros/hero-image-large.jpg">
-      <img src="images/heros/hero-image.jpg" alt="Hero" class="hero-image">
+      <img src="/images/heros/hero-image.jpg" alt="Hero" class="hero-image">
     </picture>
       <div class="hero-content">
           <h2 class="hero-title">Mau Makan Dimana Hari ini ?</h2>
