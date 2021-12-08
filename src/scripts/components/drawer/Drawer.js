@@ -7,7 +7,7 @@ class Drawer extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `          
+    this.innerHTML = /*html*/`          
     <button class="drawerButton" aria-label="menu navigasi">
       <span></span>
       <span></span>

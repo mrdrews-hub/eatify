@@ -24,15 +24,19 @@ class Home {
     cardContainer.ListRestaurants = restaurants
     searchForm.submitButton.addEventListener('click', async (el) => {
       el.preventDefault()
-      if (searchForm.searchValue === '') {
-        cardContainer.Description = 'Menampilkan Seluruh Restoran'
-        cardContainer.ListRestaurants = restaurants
+      if(!window.navigator.onLine){
+        alert('Tidak dapat menulis review ketika offline')
       } else {
-        const SearchResult = await RestaurantSource.searchRestaurant(searchForm.searchValue)
-        cardContainer.Description = `Menampilkan ${SearchResult.length} Restoran dengan kata kunci "${searchForm.searchValue}"`
-        cardContainer.ListRestaurants = SearchResult
+        if (searchForm.searchValue === '') {
+          cardContainer.Description = 'Menampilkan Seluruh Restoran'
+          cardContainer.ListRestaurants = restaurants
+        } else {
+          const SearchResult = await RestaurantSource.searchRestaurant(searchForm.searchValue)
+          cardContainer.Description = `Menampilkan ${SearchResult.length} Restoran dengan kata kunci "${searchForm.searchValue}"`
+          cardContainer.ListRestaurants = SearchResult
+        }
+        searchForm.searchValue = ''
       }
-      searchForm.searchValue = ''
     })
 
     const skipLink = document.querySelector('.skip-link')

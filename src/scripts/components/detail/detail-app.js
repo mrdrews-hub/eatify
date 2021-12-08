@@ -8,7 +8,7 @@ class Detail extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.innerHTML = /*html*/`
     <div class="detail" id="detail" tabindex="0">
 
     <img src="${CONFIG.BASE_IMAGE_URL + this._detail.pictureId}" alt="${this._detail.name}" tabindex="0">

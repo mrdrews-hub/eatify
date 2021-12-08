@@ -5,7 +5,7 @@ class SearchApp extends HTMLElement {
   }
 
   render() {
-    this.innerHTML =
+    this.innerHTML =/*html*/
     `<div class="searchContainer">
       <form class="search-restaurant-form">
         <input type="search" id="searchInput" placeholder="Cari Restoran">

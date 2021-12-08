@@ -8,7 +8,7 @@ class Card extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.innerHTML = /*html*/`
     <div class="card" tabindex=0>
       <div class="restoName">
       <h3><a href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>

@@ -13,8 +13,8 @@ class NotFound extends HTMLElement {
       </div>
       <div class="image-notFound">
       <picture>
-      <source srcset="/images/13.webp" type="image/webp">
-      <img src="/images/13.png" alt="">
+        <source srcset="/images/13.webp" type="image/webp">
+        <img src="/images/13.png" alt="">
       </picture>
       </div>
     </div>
